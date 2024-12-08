@@ -9,7 +9,7 @@
             LoadLibrary = loadLibary;
 
         }
-        public string IDEditor { get; set; }
+        public string IDEditor { get; set; }  
         public bool LoadLibrary { get; set; }
         public int Height { get; set; } = 500;
         public string toolBar { get; set; } = @"
