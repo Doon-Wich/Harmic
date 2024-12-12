@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Harmic.Utilities;
 
 namespace Harmic.Areas.Admin.Controllers
 {
@@ -10,7 +11,11 @@ namespace Harmic.Areas.Admin.Controllers
 	{
 		public IActionResult Index()
 		{
-			return View();
+            if (Function.account == null)
+            {
+                return RedirectToAction("Index", "Login");
+            }
+            return View();
 		}
 	}
 }

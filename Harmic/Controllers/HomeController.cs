@@ -2,6 +2,7 @@ using Harmic.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
+
 namespace Harmic.Controllers
 {
     public class HomeController : Controller
