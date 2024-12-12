@@ -27,7 +27,7 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="~/assets/css/style.css">
-
+    <link href="~/assets//toastr/toastr.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -825,6 +825,8 @@
 
     </div>
 
+
+
     <!-- Global Vendor, plugins JS -->
     <!-- JS Files
     ============================================ -->
@@ -837,12 +839,14 @@
     <script src="~/assets/js/vendor/jquery.waypoints.js"></script>
 
     <!--Plugins JS-->
+    @RenderSection("Scripts", required: false)
     <script src="~/assets/js/plugins/wow.min.js"></script>
     <script src="~/assets/js/plugins/jquery-ui.min.js"></script>
     <script src="~/assets/js/plugins/swiper-bundle.min.js"></script>
     <script src="~/assets/js/plugins/jquery.nice-select.js"></script>
     <script src="~/assets/js/plugins/parallax.min.js"></script>
     <script src="~/assets/js/plugins/jquery.magnific-popup.min.js"></script>
+    <script src="~/assets/toastr/toastr.min.js"></script>
 
     <!--Main JS (Common Activation Codes)-->
     <script src="~/assets/js/main.js"></script>
