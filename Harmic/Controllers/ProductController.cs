@@ -45,5 +45,35 @@ namespace Harmic.Controllers
             return View(product);
         }
 
+        [HttpPost]
+        [HttpPost]
+        public async Task<IActionResult> Reviews(string name, string phone, string email, string details, int productid)
+        {
+            try
+            {
+                // Tạo đối tượng review mới
+                TbProductReview productreview = new TbProductReview
+                {
+                    Name = name,
+                    Phone = phone,
+                    Email = email,
+                    CreatedDate = DateTime.Now,
+                    Detail = details,
+                    ProductId = productid,
+                    IsActive = true // xử lý kích hoạt trạng thái nếu cần
+                };
+
+                // Thêm vào DbSet và lưu vào cơ sở dữ liệu
+                _context.TbProductReviews.Add(productreview);
+                await _context.SaveChangesAsync(); // Sử dụng await để đảm bảo dữ liệu được lưu
+
+                return Json(new { status = true }); // Trả về trạng thái thành công
+            }
+            catch (Exception ex)
+            {
+                // Ghi log lỗi (nếu cần) và trả về trạng thái thất bại
+                return Json(new { status = false, message = ex.Message });
+            }
+        }
     }
 }
